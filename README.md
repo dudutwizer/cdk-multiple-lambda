@@ -1,4 +1,6 @@
-# api_crawler_with_lambda
+# CDK Multiple Lambda
+
+POC of CDK app compiles and deploys multiple lambda functions. Dynamo streams trigger these functions
 
 # Architecture
 
