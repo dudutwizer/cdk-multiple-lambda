@@ -1,0 +1,34 @@
+{
+  "name": "api_crawler_with_lambda",
+  "version": "0.1.0",
+  "bin": {
+    "api_crawler_with_lambda": "bin/api_crawler_with_lambda.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/node": "10.17.27",
+    "@types/prettier": "2.6.0",
+    "aws-cdk": "2.27.0",
+    "esbuild": "^0.14.47",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-lambda-nodejs": "^1.161.0",
+    "@aws-solutions-constructs/aws-apigateway-lambda": "^2.9.0",
+    "@aws-solutions-constructs/aws-lambda-dynamodb": "^2.9.0",
+    "aws-cdk-lib": "^2.9.0",
+    "aws-sdk": "^2.9.0",
+    "cdk-lambda-layer-wget": "^2.0.0",
+    "cdk-lambda-subminute": "^2.0",
+    "constructs": "^10.0.0"
+  }
+}
