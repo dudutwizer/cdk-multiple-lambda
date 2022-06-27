@@ -30,7 +30,7 @@ export class ApiCrawlerWithLambdaStack extends Stack {
         }),
       },
       dynamoTableProps: {
-        tableName: 'flightData',
+        tableName: 'table1',
         partitionKey: { name: 'api_id', type: AttributeType.STRING },
         stream: StreamViewType.NEW_AND_OLD_IMAGES,
       },
