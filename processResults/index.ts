@@ -5,16 +5,15 @@ const DEST_TABLE = process.env.DDB_TABLE_NAME!;
 
 const dynamodb = new AWS.DynamoDB();
 
-exports.handler = async (event: any) => {
-  console.log(event);
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-  };
-  // read the event (From Source_Table should be pulled from event object ! ) and do some magic and than put it in the new DEST_TABLE
-
-  return {
-    statusCode: 200,
-    body: `${SOURCE_TABLE} : ${DEST_TABLE}`,
-    headers,
-  };
+exports.handler = (event: any, context: any, callback: any) => {
+  event.Records.forEach((record: any) => {
+    console.log('Steam record: ', JSON.stringify(record, null, 2));
+    if (record.eventName == 'MODIFY') {
+      var newImage = JSON.stringify(record.dynamodb.NewImage); //example of how to read the data
+      var oldImage = JSON.stringify(record.dynamodb.OldImage); //example of how to read the data
+      console.log(newImage, oldImage);
+      // add here logic to putItem in DEST_TABLE
+    }
+  });
+  callback(null, `Successfully processed ${event.Records.length} records.`);
 };

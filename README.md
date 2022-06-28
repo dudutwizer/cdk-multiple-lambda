@@ -11,7 +11,8 @@ Microservice 1 [Publish Results](publishResults/index.ts) --> Dynamo DB Table (t
 # How to run
 
 - Install CDK
-- Install Node.JS
+- Install Node
+- Install Docker
 
 ```bash
 git clone <repo>
